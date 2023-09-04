@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ساعة رقمية</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #clock {
+      font-size: 48px;
+      font-weight: bold;
+      background-color: bisque;
+    }
+  </style>
+</head>
+<body background="1.jpg">
+    <div class="container">
+      
+    
+
+        <button id="stopButton">Stop</button>
+     
+      
+     </div>
+  <div id="clock"></div>
+  
+  <script>
+    
+    function updateClock() {
+      var now = new Date();
+      
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+      
+      // إضافة صفر إلى الأرقام إذا كانت أقل من 10
+      hours = (hours < 10 ? "0" : "") + hours;
+      minutes = (minutes < 10 ? "0" : "") + minutes;
+      seconds = (seconds < 10 ? "0" : "") + seconds;
+      
+      
+      var timeString = hours + ":" + minutes + ":" + seconds;
+      
+      document.getElementById("clock").innerHTML = timeString;
+    }
+    
+    
+    // تحديث الساعة كل ثانية
+    setInterval(updateClock, 1000);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
